@@ -1,0 +1,337 @@
+*{
+   margin:0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+ul, ol{
+   list-style:none;
+}
+a{
+ text-decoration: none;
+}
+ .row{
+   display:flex;
+   flex-wrap:nowrap;
+ }
+ .row>* {
+     flex-shrink: 1;
+ }
+
+
+ body{
+   font-family: 'Josefin Sans', sans-serif;
+   font-family: 'Montserrat', sans-serif;
+ }
+ .button{
+   padding: 12px 15px;
+   background-color: #000;
+   font-weight: 600;
+   border: 2px solid var(--primaryColor);
+   color: white;
+   transition: 0.10s;
+ }
+ .button::after{
+   content: '';
+   display: inline-block;
+   width: 100%;
+   height: 100%;
+   padding: 10px 0;
+   top: 0;
+   left: 0;
+   background-color: var(--primaryColor);
+   transform-origin: 50%-25%;
+   transform: rotateX(90deg);
+   transition: 0.2s;
+   position: absolute;
+ }
+
+ :root{
+    --primaryColor:#ff5645;
+    --seconderyColor:#d0e0eb60;
+    --thirdColor:#f06154;
+    --fourthColor:rgb(110, 109, 109);
+    --bannerHeight:800px;
+ }
+ 
+ /* Common Css ends here */
+  /* Header Start here */
+  #header{
+   width: 100%;
+   border-bottom: 1px solid var(--seconderyColor);
+   display: flex;
+   position: absolute;
+   z-index: 10;
+  }
+  #header .header_cnt ul li{
+    display: inline-block !important;
+    padding: 15px 10px;
+    border: 1px solid var(--seconderyColor);
+    border-bottom: 0;
+    border-top: 0;
+  }
+  #header .header_cnt ul li:nth-child(1){
+   border-left: 0;
+  }
+  #header .header_cnt ul li:nth-child(2){
+   border-left: 0;
+   border-right: 0;
+  }
+  #header .header_cnt ul li:nth-child(3){
+   border-right:0 ;
+  }
+  .header_cnt ul li a{
+    font-size: 14px;
+    color: white;
+    z-index: 1;
+  }
+  .header_cnt ul li span{
+   padding-right:15px;
+   color: white;
+  }
+
+#header .header_icon ul li{
+   display: inline-block;
+   padding: 15px 08px;
+}
+.header_icon ul li a{
+   color: white;
+   position: relative;
+}
+.header_icon ol, ul{
+   text-align:end;
+   padding: 0;
+   margin: 0;
+}
+.header_icon ul li a::after{
+   content: '';
+   width: 30px;
+   height: 30px;
+   top: -6px;
+   right: -7px;
+   border-radius: 50%;
+   background-color: var(--seconderyColor);
+   position: absolute;
+   z-index: 1;
+}
+/* Header Ends here */
+/* Navbar Start here */
+nav {
+	width: 100%;
+	top: 50px;
+	position: absolute;
+	z-index: 10;
+}
+nav .logo {
+	width: 20%;
+	display: inline-block;
+	font-size: 25px;
+	font-weight: 800;
+	color: white;
+	padding: 05vh 08vh;
+}
+nav .menu ul li{
+   display: inline-block;
+   padding: 6vh 3vh;
+   /* font-weight: 400; */
+   position: relative;
+}
+nav .menu ul li a{
+   color: white;
+   font-size: 16px;
+   font-weight: 400;
+}
+nav .menu ul li .button{
+   position: relative;
+   background-color: transparent;
+   color: white;
+   border: 2px solid var(--thirdColor);
+}
+nav .menu ul li .button:hover::after{
+   content: 'Sing Up';
+   text-align: center;
+   background-color: var(--thirdColor);
+   color: white;
+   transform: rotateX(0deg);
+   top: 0;
+}
+nav .menu ul li span{
+   font-size: 12px ;
+   padding-left: 2px;
+}
+nav .menu ul li a:hover{
+   color: var(--primaryColor);
+}
+/* Dropdown menu Start here */
+nav .menu ul li ul{
+   position: absolute;
+   background-color: white;
+   margin-top: 90px;
+   width: 30vh;
+   text-align: start;
+   border-radius: 5px;
+   visibility: hidden;
+   opacity: 0;
+   transition: 0.40s;
+   box-shadow: rgba(100,100, 111, 0.2) 0px 7px 29px 0px;
+   z-index: 5;
+}
+nav .menu ul li:nth-child(1) ul{
+   width: 30vh;
+}
+nav .menu ul li:nth-child(2) ul{
+   width: 40vh;
+}
+nav .menu ul li:nth-child(8) ul{
+   width: 20vh;
+}
+nav .menu ul li ul li a{
+   font-size: 14px;
+}
+nav .menu ul li ul::before{
+   content: '';
+   position: absolute;
+   top: -5px;
+   left: 10px;
+   width: 15px;
+   height: 20px;
+   background-color: white;
+   z-index: -1;
+   opacity: 0;
+   visibility: hidden;
+   transform: rotate(45deg);
+}
+nav .menu ul li ul::before{
+   visibility: visible;
+   opacity: 1;
+}
+nav .menu ul li:hover ul{
+   margin-top:10px ;
+   visibility: visible;
+   opacity: 1;
+}
+nav .menu ul li ul li{
+   padding: 10px 15px;
+   display: block;
+   font-weight: 500;
+}
+nav .menu ul li ul li a{
+   color: black;
+}
+/* dropdown menu Ends here */
+/* Navbar Ends here */
+
+/* Bannar Start here */
+#banner .row{
+   height: var(--bannerHeight);
+}
+#banner .banner_slider .overley{
+   background-color: #0000009c;
+   width: 100%;
+}
+#banner .banner_slider {
+   height: var(--bannerHeight);
+   background-position: center;
+   background-size: cover;
+   background-attachment: fixed;
+   clip-path: polygon(100% 0%, 100% 51%, 100% 85%, 19% 100%, 0 85%, 0% 0%);
+}
+#banner .banner_ctn{
+   text-align: center;
+   color: white;
+}
+#banner .banner_ctn span{
+   font-size: 18px;
+   font-weight: 600;
+   padding: 10px 15px;
+   border-radius: 5px;
+   background-color: #a3a5a7e7;
+}
+#banner .banner_ctn h3{
+   font-size: 40px;
+   font-weight: 800;
+   padding: 15px 0;
+   text-shadow: rgba(0, 0, 0, 0.70) 5px 4px 5px , rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+#banner .banner_ctn p{
+   padding: 15px;
+   font-weight: 400;
+  line-height: 30px;
+}
+#banner .banner_ctn .button{
+   position: relative;
+   transition: 0.05em;
+}
+#banner .banner_ctn .button::after{
+   content: 'Contact Now';
+   padding: 10px 0;
+   width: 105%;
+   height: 105%;
+   top: -2px;
+   left: -10px;
+   position: absolute;
+   color: white;
+}
+#banner .banner_ctn .button:hover::after{
+   transform: rotateX(0deg);
+   top: -4px;
+}
+/* banner Ends here */
+
+/* About part strat here */
+#about {
+	padding: 80px 0;
+}
+ #about .about_img img{
+   width: 100%;
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+
+ }
+ #about .about_ctn{
+   width: 60%;
+ }
+ .about_ctn h5 {
+	padding: 60px 0 15px 0;
+	font-size: 18px;
+	font-weight: 600;
+	color: var(--primaryColor);
+}
+.about_ctn h2 {
+	font-size: 40px;
+	font-weight: 800;
+	margin-bottom: 0;
+}
+ .about_ctn p {
+	padding: 20px 0;
+	color: var(--fourthColor);
+	margin: 0  0;
+   line-height: 27px;
+}
+.about_ctn ul li {
+	font-size: 16px;
+	font-weight: 400;
+	color: var(--fourthColor);
+	text-align: start;
+	padding: 4px 0;
+}
+ .about_ctn ul li span{
+   color: var(--primaryColor);
+   padding: 0 10px 0 0;
+ }
+ .about_ctn .button {
+	position: relative;
+	transition: 0.5s;
+	margin-top: 25px;
+	display: inline-block;
+	padding: 8px 15px;
+}
+ .about_ctn .button:hover::after{
+   content: 'About Us';
+   transform: rotate(0deg);
+   top: -3px;
+   color: white;
+   text-align: center;
+ }
+ /* about part ends here */
